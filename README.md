@@ -104,7 +104,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/dk3775/lms.git
+   git clone https://github.com/TitansLab/lms.git
    ```
 2. Install NPM packages
    ```sh
@@ -162,9 +162,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Dhyey K - [@DhyeyHk](https://twitter.com/DhyeyHk) - dk@titanslab.in
 
+Anjan P - anjan@titanslab.in
+
 Project Link: [https://github.com/dk3775/lms](https://github.com/dk3775/lms)
 
-Anjan P - anjan@titanslab.in
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
