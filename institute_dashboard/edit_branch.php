@@ -46,6 +46,7 @@ if ($_SESSION['role'] != "Texas") {
 						<?php
 						include_once("../config.php");
 						$bid = $_GET['brid'];
+						$bid = mysqli_real_escape_string($conn, $bid);
 						$_SESSION["userrole"] = "Institute";
 						if (isset($bid)) {
 							$sql = "SELECT * FROM branchmaster WHERE BranchId = '$bid'";
@@ -53,7 +54,7 @@ if ($_SESSION['role'] != "Texas") {
 							$row = mysqli_fetch_assoc($result);
 
 						?>
-							<form method="POST" enctype="multipart/form-data">
+							<form method="POST" autocomplete="off" enctype="multipart/form-data">
 								<div class="row">
 									<div class="col-12 col-md-6">
 										<div class="form-group">

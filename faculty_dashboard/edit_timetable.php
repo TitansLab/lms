@@ -14,6 +14,7 @@ if ($_SESSION['role'] != "Lagos") {
 
 // $ttid = "4";
 $ttid = $_GET['ttid'];
+$ttid = mysqli_real_escape_string($conn, $ttid);
 $timetablesel = "SELECT * FROM timetablemaster INNER JOIN branchmaster ON branchmaster.BranchCode = timetablemaster.TimetableBranchCode WHERE TimetableId='$ttid'";
 $timetableresult = mysqli_query($conn, $timetablesel);
 $row = mysqli_fetch_assoc($timetableresult);
@@ -55,7 +56,7 @@ $row = mysqli_fetch_assoc($timetableresult);
                   </div>
                </div>
                <!-- Form -->
-               <form method="POST" enctype="multipart/form-data" class="row g-3 needs-validation">
+               <form method="POST" autocomplete="off" enctype="multipart/form-data" class="row g-3 needs-validation">
                   <div class="card">
                      <div class="card-body text-center">
                         <div class="row justify-content-center">

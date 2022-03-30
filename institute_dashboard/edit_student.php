@@ -46,6 +46,7 @@ if ($_SESSION['role'] != "Texas") {
                         <?php
                         include_once("../config.php");
                         $studentenr = $_GET['studentenr'];
+                        $studentenr = mysqli_real_escape_string($conn, $studentenr);
                         $_SESSION["userrole"] = "Faculty";
                         if (isset($studentenr)) {
                             $sql = "SELECT * FROM studentmaster WHERE StudentEnrollmentNo = '$studentenr'";
@@ -53,7 +54,7 @@ if ($_SESSION['role'] != "Texas") {
                             $row = mysqli_fetch_assoc($result);
 
                         ?>
-                            <form method="POST" enctype="multipart/form-data">
+                            <form method="POST" autocomplete="off" enctype="multipart/form-data">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col">
                                         <div class="row align-items-center">

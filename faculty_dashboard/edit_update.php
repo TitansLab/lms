@@ -8,6 +8,7 @@ if ($_SESSION['role'] != "Lagos") {
 }
 
 $updid = $_GET['updid'];
+$updid = mysqli_real_escape_string($conn, $updid);
 $updatesel = "SELECT * FROM updatemaster WHERE UpdateId='$updid'";
 $updateresult = mysqli_query($conn, $updatesel);
 $row = mysqli_fetch_assoc($updateresult);
@@ -49,7 +50,7 @@ $row = mysqli_fetch_assoc($updateresult);
                   </div>
                </div>
                <!-- Form -->
-               <form method="POST" enctype="multipart/form-data" class="row g-3 needs-validation" >
+               <form method="POST" autocomplete="off" enctype="multipart/form-data" class="row g-3 needs-validation" >
                   <div class="card">
                      <div class="card-body text-center">
                         <div class="row justify-content-center">

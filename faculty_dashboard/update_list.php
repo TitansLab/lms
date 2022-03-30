@@ -5,7 +5,7 @@ if ($_SESSION['role'] != "Lagos") {
     header("Location: ../index.php");
 } else {
     include_once "../config.php";
-    $_SESSION["userrole"] = "faculty";
+    $_SESSION["userrole"] = "Faculty";
 
     $uqur = "SELECT * FROM updatemaster Order by UpdateUploadDate DESC";
     $ures = mysqli_query($conn, $uqur);
@@ -68,7 +68,7 @@ if ($_SESSION['role'] != "Lagos") {
                                                         <div class="row align-items-center">
                                                             <div class="col">
                                                                 <!-- Form -->
-                                                                <form>
+                                                                <form  autocomplete="off">
                                                                     <div class="input-group input-group-flush input-group-merge input-group-reverse">
                                                                         <input class="form-control list-search" type="search" placeholder="Search">
                                                                         <span class="input-group-text">

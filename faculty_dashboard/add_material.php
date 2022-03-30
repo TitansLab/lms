@@ -52,7 +52,7 @@ if ($_SESSION['role'] != "Lagos") {
                         </div>
                         <!-- Form -->
                         <br>
-                        <form method="POST" enctype="multipart/form-data" class="row g-3 needs-validation" >
+                        <form method="POST" autocomplete="off" enctype="multipart/form-data" class="row g-3 needs-validation">
 
                             <div class="row">
                                 <div class="col-md-2">
@@ -194,10 +194,10 @@ if ($_SESSION['role'] != "Lagos") {
         $materialcode = $subcode . "_" . $unitno;
         $engmaterial = $materialcode . "_" .  "ENG" . ".pdf";
         $gujmaterial = $materialcode . "_" .  "GUJ" . ".pdf";
-        try{
+        try {
             $sql = "INSERT INTO `studymaterialmaster`(`SubjectCode`, `SubjectUnitNo`, `MaterialCode`, `SubjectUnitName`, `EngMaterialFile`, `GujMaterialFile`, `MaterialUploadDate`) 
             VALUES ('$subcode','$unitno','$materialcode','$unitname','$engmaterial','$gujmaterial','$dt')";
-    
+
             $run = mysqli_query($conn, $sql);
             if ($run == true) {
                 // Eng Matrial
@@ -220,7 +220,7 @@ if ($_SESSION['role'] != "Lagos") {
                 } else {
                     echo "Something went wrong .. !";
                 }
-    
+
                 echo "<script>alert('Study Material Added Successfully');</script>";
                 echo "<script>window.open('subject_profile.php?subid=$subid','_self');</script>";
             } else {

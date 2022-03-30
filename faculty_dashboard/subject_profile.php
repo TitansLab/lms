@@ -6,6 +6,7 @@ if ($_SESSION['role'] != "Lagos" or !isset($_GET['subid'])) {
 	header("Location: ../index.php");
 } else {
 	$xbrid = $_GET['subid'];
+	$xbrid = mysqli_real_escape_string($conn, $xbrid);
 	$qur = "SELECT *,BranchName,FacultyFirstName,FacultyLastName FROM ((subjectmaster INNER JOIN branchmaster ON subjectmaster.SubjectBranch = branchmaster.BranchId) INNER JOIN facultymaster ON subjectmaster.SubjectFacultyId = facultymaster.FacultyId) WHERE SubjectId = '$xbrid'";
 	$res = mysqli_query($conn, $qur);
 	$row = mysqli_fetch_assoc($res);
@@ -117,7 +118,7 @@ if ($_SESSION['role'] != "Lagos" or !isset($_GET['subid'])) {
 											<div class="row align-items-center">
 												<div class="col">
 													<!-- Form -->
-													<form>
+													<form autocomplete="off">
 														<div class="input-group input-group-flush input-group-merge input-group-reverse">
 															<input class="form-control list-search" type="search" placeholder="Search">
 															<span class="input-group-text">
@@ -163,7 +164,7 @@ if ($_SESSION['role'] != "Lagos" or !isset($_GET['subid'])) {
 															</td>
 															<td></td>
 															<td>
-																<a href="edit_material.php?subcode=<?php echo $row['SubjectCode']; ?>&matid=<?php echo $roww['MaterialCode']; ?>" class="btn btn-sm btn-warning">
+																<a href="edit_material.php?matid=<?php echo $roww['MaterialId']; ?>" class="btn btn-sm btn-warning">
 																	Edit
 																</a>
 															</td>

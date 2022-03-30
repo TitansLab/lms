@@ -4,7 +4,7 @@ if ($_SESSION['role'] != "Texas") {
     header("Location: ../index.php");
 } else {
     include_once("../config.php");
-    $_SESSION["userrole"] = "institute";
+    $_SESSION["userrole"] = "Institute";
     $qur = "SELECT * FROM facultymaster INNER JOIN branchmaster ON branchmaster.BranchCode = facultymaster.FacultyBranchCode  ORDER BY FacultyFirstName";
     $res = mysqli_query($conn, $qur);
 }
@@ -72,7 +72,7 @@ if ($_SESSION['role'] != "Texas") {
                                         <div class="row align-items-center">
                                             <div class="col">
                                                 <!-- Form -->
-                                                <form>
+                                                <form  autocomplete="off">
                                                     <div class="input-group input-group-flush input-group-merge input-group-reverse">
                                                         <input class="form-control list-search" type="search" placeholder="Search">
                                                         <span class="input-group-text">

@@ -50,7 +50,7 @@ $brrow = mysqli_fetch_assoc($branchresult);
                   </div>
                </div>
                <!-- Form -->
-               <form method="POST" enctype="multipart/form-data" class="row g-3 needs-validation">
+               <form method="POST" autocomplete="off" enctype="multipart/form-data" class="row g-3 needs-validation">
                   <div class="card">
                      <div class="card-body text-center">
                         <div class="row justify-content-center">
@@ -71,7 +71,7 @@ $brrow = mysqli_fetch_assoc($branchresult);
                                  </small>
                               </div>
                               <div class="col-12 col-md-6">
-                                 <input type="file" id="img" name="tpic" class="btn btn-sm" onchange="showPreview(event);" accept="image/jpg, image/jpeg, image/png">
+                                 <input type="file" id="img" name="tpic" class="btn btn-sm" onchange="showPreview(event);" accept="image/jpg, image/jpeg, image/png" required>
                               </div>
                            </div>
                         </div>
